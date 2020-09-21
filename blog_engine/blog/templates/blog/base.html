@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %} Блог {% endblock %}
+
+{% block admin_panel %}
+  <div class="btn-group" role="group">
+    <a id="btnGroupDrop1"  class="dropdown-toggle btn btn-success" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Добавить
+    </a>
+    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+      <a class="dropdown-item" href="{% url 'post_create_url' %}">Пост</a>
+      <a class="dropdown-item" href="{% url 'tag_create_url'%}">Тег</a>
+    </div>
+  </div>
+  {% if detail_obj %}
+    <a class="btn btn-info" href="{{obj.get_update_url}}">Изменить</a>
+    <a class="btn btn-danger" href="{{obj.get_delete_url}}">Удалить</a>
+  {% endif %}
+{% endblock %}

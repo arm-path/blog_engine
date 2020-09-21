@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block title %} TagDelete: {{tag.title}} {% endblock %}
+
+{% block content %}
+  <form action="{% url 'tag_delete_url' tag.slug %}" method="post">
+    {% csrf_token %}
+    <div class="alert alert-info">
+      Вы действительно хотите удалить пост: "{{tag.title}}"?
+    </div>
+    <a href="{{tag.get_absolute_url}}" class="btn btn-primary">Отмена</a>
+    <button class="btn btn-danger" type="submit">Подтвердить</button>
+  </form>
+{% endblock %}

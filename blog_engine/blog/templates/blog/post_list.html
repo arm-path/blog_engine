@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Blogs{% endblock %}
+
+{% block content %}
+  <h1 class="mb-3">Список постов:</h1>
+  {% for post in page_obj.object_list %}
+    {% include 'blog/include/posts_list.html'%}
+  {% endfor %}
+{% endblock %}

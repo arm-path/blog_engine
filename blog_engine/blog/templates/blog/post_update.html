@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+
+{% block title %} PostUpdate: {{post.title}} {% endblock %}
+
+{% block content %}
+  <form action="{% url 'post_update_url' post.slug %}" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      {% for field in form %}
+        {% if field.errors %}
+          {{field.errors}}
+        {% endif %}
+        {{field.label}}: {{field}}
+      {% endfor %}
+    </div>
+    <button class="btn btn-primary">Обновить пост</button>
+  </form>
+{% endblock %}

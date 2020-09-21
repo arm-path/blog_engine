@@ -1,0 +1,21 @@
+.admin-panel{
+  position: fixed;
+  right: 35px;
+  bottom: 35px;
+
+  opacity: 0.4;
+  background-color: #eeeeee;
+
+  transition: opacity 0.5s linear;
+
+}
+
+.admin-panel:hover{
+  opacity: 0.9;
+}
+
+.admin-panel a{
+  display: block;
+
+  margin-bottom: 5px;
+}

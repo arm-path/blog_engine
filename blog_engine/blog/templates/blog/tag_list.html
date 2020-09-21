@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+{% block title %}Tags{% endblock %}
+
+{% block content %}
+<div class="card mb-3">
+  <div class="card-body">
+    <h1 class="mb-3">Теги: </h1>
+    {% for tag in tags %}
+      <a href="{{tag.get_absolute_url}}" class="btn btn-secondary mt-1">{{tag.title}}</a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
